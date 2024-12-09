@@ -2,7 +2,10 @@ services:
   - type: web
     name: eliza
     env: node
-    buildCommand: pnpm install && pnpm build
+    buildCommand: |
+      pnpm install --no-frozen-lockfile
+      pnpm add -g turbo
+      pnpm build
     startCommand: pnpm start
     nodeVersion: 23.3.0
     envVars:
