@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: eliza
+    env: node
+    buildCommand: pnpm install && pnpm build
+    startCommand: pnpm start
+    nodeVersion: 23.3.0
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 23.3.0
+      - key: PNPM_VERSION
+        value: 8.15.1
