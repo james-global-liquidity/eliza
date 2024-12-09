@@ -3,6 +3,7 @@
     "scripts": {
         "preinstall": "npx only-allow pnpm",
         "build": "turbo run build",
+        "heroku-postbuild": "pnpm install --force && pnpm build",
         "start": "pnpm --filter \"@ai16z/agent\" start --isRoot",
         "start:client": "pnpm --dir client start --isRoot",
         "start:debug": "cross-env NODE_ENV=development VERBOSE=true DEBUG=eliza:* pnpm --filter \"@ai16z/agent\" start --isRoot",
@@ -45,7 +46,7 @@
         }
     },
     "engines": {
-        "node": "23.3.0",
+        "node": "20.x",
         "pnpm": "9.12.3"
     },
     "dependencies": {
